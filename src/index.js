@@ -6,21 +6,14 @@ import {append, create} from "./js/dom"
 import {log} from "./js/helpers"
 
 // import "./js/correct-view";
-import { scrollSmoothTo } from "./js/smooth-scroll-to";
-
-
-for (let link of document.querySelectorAll(".navigation__item-link")) {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    e.stopPropagation();
-    scrollSmoothTo(e.target.dataset.id);
-  })
-}
-
+import { processInnerLinkClick } from "./js/smooth-scroll-to";
+processInnerLinkClick();
 
 // import $ from "jquery";
 // log($);
 
+
+/*
 import data from "./data/data.json";
 const skills = data.skills;
 const skillsList = document.querySelector(".skills__list");
@@ -44,13 +37,13 @@ const renderSkills = (skills = []) => {
 };
 
 renderSkills(skills);
-
+*/
 
 // log(skills);
 
 
 
-
+/*
 class Ajax {
   static async get(url) {
     try{
@@ -70,3 +63,4 @@ Ajax.get("https://jsonplaceholder.typicode.com/posts").then(posts => {
     document.body.innerHTML += postBlock;
   })
 })
+*/

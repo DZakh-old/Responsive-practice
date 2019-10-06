@@ -8266,54 +8266,51 @@ exports.log = log;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.scrollSmoothTo = void 0;
+exports.processInnerLinkClick = void 0;
 
-var scrollSmoothTo = function scrollSmoothTo(elementId) {
-  console.log(elementId);
+var processInnerLinkClick = function processInnerLinkClick() {
+  var links = document.querySelectorAll(".navigation__item-link,.first__arrow-to-down");
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = links[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var link = _step.value;
+      link.addEventListener("click", function (e) {
+        // console.log("clicked");
+        e.preventDefault();
+        e.stopPropagation();
+        smoothScrollTo(e.target.dataset.id);
+      });
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return != null) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+
+  ;
+};
+
+exports.processInnerLinkClick = processInnerLinkClick;
+
+var smoothScrollTo = function smoothScrollTo(elementId) {
+  // console.log(elementId);
   var element = document.getElementById(elementId);
   element.scrollIntoView({
     block: 'start',
     behavior: 'smooth'
   });
-}; //Static method
-
-
-exports.scrollSmoothTo = scrollSmoothTo;
-},{}],"data/data.json":[function(require,module,exports) {
-module.exports = {
-  "skills": [{
-    "id": 1,
-    "name": "photoshop",
-    "value": 98
-  }, {
-    "id": 2,
-    "name": "html5",
-    "value": 99
-  }, {
-    "id": 3,
-    "name": "css",
-    "value": 100
-  }, {
-    "id": 4,
-    "name": "лень",
-    "value": 0
-  }, {
-    "id": 1,
-    "name": "photoshop",
-    "value": 98
-  }, {
-    "id": 2,
-    "name": "html5",
-    "value": 99
-  }, {
-    "id": 3,
-    "name": "css",
-    "value": 100
-  }, {
-    "id": 4,
-    "name": "лень",
-    "value": 0
-  }]
 };
 },{}],"index.js":[function(require,module,exports) {
 "use strict";
@@ -8332,125 +8329,59 @@ var _helpers = require("./js/helpers");
 
 var _smoothScrollTo = require("./js/smooth-scroll-to");
 
-var _data = _interopRequireDefault(require("./data/data.json"));
+// import "./js/correct-view";
+(0, _smoothScrollTo.processInnerLinkClick)(); // import $ from "jquery";
+// log($);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+/*
+import data from "./data/data.json";
+const skills = data.skills;
+const skillsList = document.querySelector(".skills__list");
 
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+const renderSkill = ({id, name, value}) => {
+  const skill = `
+    <li data-id="${id}" class="skills__item">
+      <div class="skills__number">
+        ${value}%
+      </div>
+      <p class="skills__name">
+        ${name}
+      </p>
+    </li>
+  `;
+  skillsList.innerHTML += skill;
+};
 
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+const renderSkills = (skills = []) => {
+  skills.map(renderSkill);
+};
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+renderSkills(skills);
+*/
+// log(skills);
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var _iteratorNormalCompletion = true;
-var _didIteratorError = false;
-var _iteratorError = undefined;
-
-try {
-  for (var _iterator = document.querySelectorAll(".navigation__item-link")[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-    var link = _step.value;
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      (0, _smoothScrollTo.scrollSmoothTo)(e.target.dataset.id);
-    });
-  } // import $ from "jquery";
-  // log($);
-
-} catch (err) {
-  _didIteratorError = true;
-  _iteratorError = err;
-} finally {
-  try {
-    if (!_iteratorNormalCompletion && _iterator.return != null) {
-      _iterator.return();
-    }
-  } finally {
-    if (_didIteratorError) {
-      throw _iteratorError;
+/*
+class Ajax {
+  static async get(url) {
+    try{
+      const res = await fetch(url);
+      return res.json();
+    } catch(error) {
+      throw new Error(error)
     }
   }
 }
 
-var skills = _data.default.skills;
-var skillsList = document.querySelector(".skills__list");
-
-var renderSkill = function renderSkill(_ref) {
-  var id = _ref.id,
-      name = _ref.name,
-      value = _ref.value;
-  var skill = "\n    <li data-id=\"".concat(id, "\" class=\"skills__item\">\n      <div class=\"skills__number\">\n        ").concat(value, "%\n      </div>\n      <p class=\"skills__name\">\n        ").concat(name, "\n      </p>\n    </li>\n  ");
-  skillsList.innerHTML += skill;
-};
-
-var renderSkills = function renderSkills() {
-  var skills = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  skills.map(renderSkill);
-};
-
-renderSkills(skills); // log(skills);
-
-var Ajax =
-/*#__PURE__*/
-function () {
-  function Ajax() {
-    _classCallCheck(this, Ajax);
-  }
-
-  _createClass(Ajax, null, [{
-    key: "get",
-    value: function () {
-      var _get = _asyncToGenerator(
-      /*#__PURE__*/
-      regeneratorRuntime.mark(function _callee(url) {
-        var res;
-        return regeneratorRuntime.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.prev = 0;
-                _context.next = 3;
-                return fetch(url);
-
-              case 3:
-                res = _context.sent;
-                return _context.abrupt("return", res.json());
-
-              case 7:
-                _context.prev = 7;
-                _context.t0 = _context["catch"](0);
-                throw new Error(_context.t0);
-
-              case 10:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee, null, [[0, 7]]);
-      }));
-
-      function get(_x) {
-        return _get.apply(this, arguments);
-      }
-
-      return get;
-    }()
-  }]);
-
-  return Ajax;
-}();
-
-Ajax.get("https://jsonplaceholder.typicode.com/posts").then(function (posts) {
-  posts.map(function (post) {
-    var postBlock = "\n      <p>".concat(post.title, "</p>\n    ");
+Ajax.get("https://jsonplaceholder.typicode.com/posts").then(posts => {
+  posts.map(post => {
+    const postBlock = `
+      <p>${post.title}</p>
+    `;
     document.body.innerHTML += postBlock;
-  });
-});
-},{"../node_modules/normalize.css/normalize.css":"../node_modules/normalize.css/normalize.css","babel-polyfill":"../node_modules/babel-polyfill/lib/index.js","./fonts/stylesheet.css":"fonts/stylesheet.css","./css/main.scss":"css/main.scss","./js/dom":"js/dom/index.js","./js/helpers":"js/helpers/index.js","./js/smooth-scroll-to":"js/smooth-scroll-to.js","./data/data.json":"data/data.json"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+  })
+})
+*/
+},{"../node_modules/normalize.css/normalize.css":"../node_modules/normalize.css/normalize.css","babel-polyfill":"../node_modules/babel-polyfill/lib/index.js","./fonts/stylesheet.css":"fonts/stylesheet.css","./css/main.scss":"css/main.scss","./js/dom":"js/dom/index.js","./js/helpers":"js/helpers/index.js","./js/smooth-scroll-to":"js/smooth-scroll-to.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -8478,7 +8409,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62150" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61649" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
