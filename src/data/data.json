@@ -1,0 +1,44 @@
+{
+  "skills": [
+    {
+      "id": 1,
+      "name": "photoshop",
+      "value": 98
+    },
+    {
+      "id": 2,
+      "name": "html5",
+      "value": 99
+    },
+    {
+      "id": 3,
+      "name": "css",
+      "value": 100
+    },
+    {
+      "id": 4,
+      "name": "лень",
+      "value": 0
+    },
+    {
+      "id": 1,
+      "name": "photoshop",
+      "value": 98
+    },
+    {
+      "id": 2,
+      "name": "html5",
+      "value": 99
+    },
+    {
+      "id": 3,
+      "name": "css",
+      "value": 100
+    },
+    {
+      "id": 4,
+      "name": "лень",
+      "value": 0
+    }
+  ]
+}
