@@ -7,29 +7,26 @@
   <meta name="theme-color" content="#204d15"/>
   <meta name="description" content="Portfolio project for practice responsive with media queries"/>
 	<title>Responsive practice</title>
-  <link rel="icon" href="img/site-icon.ico">
-  <!-- <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
-	<link rel="stylesheet" href="fonts/stylesheet.css?v=0.2">
-  <link rel="stylesheet" href="css/main.css?v=0.2"> -->
+  <link rel="icon" href="./img/site-icon.ico">
 </head>
 <body class="page">
 	<header class="first">
     <picture>
       <source media="(min-width: 768px)"
-              srcset="img/first/background-1536w-min.webp" type="image/webp"
-         data-srcset="img/first/background-640w-1x.webp 640w,
-                      img/first/background-1536w-2x.webp 1536w">
-      <source srcset="img/first/background-768w-min.webp" type="image/webp"
-         data-srcset="img/first/background-384w-1x.webp 384w,
-                      img/first/background-768w-2x.webp 768w">
+              srcset="./img/first/background-1536w-min.webp" type="image/webp"
+         data-srcset="./img/first/background-640w-1x.webp 640w,
+                      ./img/first/background-1536w-2x.webp 1536w">
+      <source srcset="./img/first/background-768w-min.webp" type="image/webp"
+         data-srcset="./img/first/background-384w-1x.webp 384w,
+                      ./img/first/background-768w-2x.webp 768w">
       <source media="(min-width: 768px)"
-              srcset="img/first/background-1536w-min.jpg" type="image/jpeg"
-         data-srcset="img/first/background-640w-1x.jpg 640w,
-                      img/first/background-1536w-2x.jpg 1536w">
-      <source srcset="img/first/background-768w-min.jpg" type="image/jpeg"
-         data-srcset="img/first/background-384w-1x.jpg 384w,
-                      img/first/background-768w-2x.jpg 768w">
-      <img src="img/first/background-1536w-2x.jpg" class="first__background lazyload"
+              srcset="./img/first/background-1536w-min.jpg" type="image/jpeg"
+         data-srcset="./img/first/background-640w-1x.jpg 640w,
+                      ./img/first/background-1536w-2x.jpg 1536w">
+      <source srcset="./img/first/background-768w-min.jpg" type="image/jpeg"
+         data-srcset="./img/first/background-384w-1x.jpg 384w,
+                      ./img/first/background-768w-2x.jpg 768w">
+      <img src="./img/first/background-1536w-2x.jpg" class="first__background lazyload"
             alt="Таинственный лес, по которому бредет человек в капюшоне">
     </picture>
 		<div class="container first__inner">
@@ -57,19 +54,21 @@
 					</ul>
 				</nav>
 				<div class="email">	
-					<a href="" class="email__link underline underline_color_masthead">
+					<a href="#" class="email__link underline underline_color_masthead">
 						info@myname.com
 					</a>
 				</div>
-			</div>
-			<div class="first__title">
-				<h1 class="heading first__heading">
-					Дело, которым я живу
-				</h1>
-				<p class="first__caption">
-					Верстка & Frontend
-				</p>
-			</div>
+      </div>
+      <div class="first__title-wrap">
+        <div class="first__title">
+          <h1 class="heading first__heading">
+            Дело, которым я живу
+          </h1>
+          <p class="first__caption">
+            Верстка & Frontend
+          </p>
+        </div>
+      </div>
 			<button data-id="about-me" class="first__arrow-to-down" aria-label="Стрелка вниз страницы"></button>
 		</div>
   </header>
@@ -134,23 +133,23 @@
             <div class="connection__content">
               <ul class="references">
                 <li class="references__item">
-                  <a href="" class="underline underline_color_references references__link">
+                  <a href="#" class="underline underline_color_references references__link">
                     freelance.ru/myname
                   </a>
                 </li>
                 <li class="references__item">
-                  <a href="" class="underline underline_color_references references__link">
+                  <a href="#" class="underline underline_color_references references__link">
                     vk.com/12343
                   </a>
                 </li>
                 <li class="references__item">
-                  <a href="" class="underline underline_color_references references__link">
+                  <a href="#" class="underline underline_color_references references__link">
                     info@sitename.ru
                   </a>
                 </li>
               </ul>
               <div class="me">
-                <img src="img/about-me/photo-min.png" data-src="img/about-me/photo.png" alt="Фото профиля" class="me__photo lazyload">
+                <img src="./img/about-me/photo-min.png" data-src="./img/about-me/photo.png" alt="Фото профиля" class="me__photo lazyload">
                 <p class="me__call">
                   Не стесняйтесь, пишите
                 </p>
@@ -208,39 +207,39 @@
         </h2>
         <ul class="projects__list">
           <li class="projects__item projects__item_bg_mountains">
-            <img src="img/projects/mountains-min.jpg" data-src="img/projects/mountains.jpg" alt="Скалистый утес с породой коричневого цвета" class="projects__background lazyload">
+            <img src="./img/projects/mountains-min.jpg" data-src="./img/projects/mountains.jpg" alt="Скалистый утес с породой коричневого цвета" class="projects__background lazyload">
             <div class="projects__hover-screen">
               <div class="projects__title">
                 <h3 class="projects__name">
                   Название работы
                 </h3>
-                <a href="" class="underline underline_color_projects projects__view">
+                <a href="#" class="underline underline_color_projects projects__view">
                   Смотреть
                 </a>
               </div>
             </div>
           </li>
           <li class="projects__item projects__item_bg_deer">
-            <img src="img/projects/deer-min.jpg" data-src="img/projects/deer.jpg" alt="Дикий олень в промерзлой воде" class="projects__background lazyload">
+            <img src="./img/projects/deer-min.jpg" data-src="./img/projects/deer.jpg" alt="Дикий олень в промерзлой воде" class="projects__background lazyload">
             <div class="projects__hover-screen">
               <div class="projects__title">
                 <h3 class="projects__name">
                   Название работы
                 </h3>
-                <a href="" class="underline underline_color_projects projects__view">
+                <a href="#" class="underline underline_color_projects projects__view">
                   Смотреть
                 </a>
               </div>
             </div>
           </li>
           <li class="projects__item projects__item_bg_house">
-            <img src="img/projects/house-min.jpg" data-src="img/projects/house.jpg" alt="Заснеженная избушка в дремучем лесу" class="projects__background lazyload">
+            <img src="./img/projects/house-min.jpg" data-src="./img/projects/house.jpg" alt="Заснеженная избушка в дремучем лесу" class="projects__background lazyload">
             <div class="projects__hover-screen">
               <div class="projects__title">
                 <h3 class="projects__name">
                   Название работы
                 </h3>
-                <a href="" class="underline underline_color_projects projects__view">
+                <a href="#" class="underline underline_color_projects projects__view">
                   Смотреть
                 </a>
               </div>
@@ -257,14 +256,6 @@
 			</p>
 		</div>
 	</footer>
-
   <script src="./index.js"></script>
-
-  <!-- Lazy load for images -->
-  <!-- <script src="node_modules/lazysizes/lazysizes.min.js"></script> -->
-  <!-- Correct view port of the first screen -->
-  <!-- <script src="js/correct-view.js?v=0.2"></script> -->
-	<!-- Smooth scroll through anchors-->
-  <!-- <script src="js/smooth-scroll-to.js?v=0.2"></script> -->
 </body>
 </html>
