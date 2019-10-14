@@ -1,3 +1,5 @@
+setTimeout(firstViewportCorrection(), 0);
+
 function firstViewportCorrection() {
   if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     correctSizing();
